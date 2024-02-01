@@ -1,21 +1,22 @@
 <template>
-
-
-  <div>
-      <h2>Lista dei Progetti</h2>
-      <ul>
-        <li v-for="project in projects.projects" :key="project.id">
-          {{ project.title }}
-        </li>
-      </ul>
+    <div class="container-fluid">
+        <h1>Card project</h1>
+      <div class="row mt-4 justify-content-center">
+        <project-card v-for="project in projects.projects" :key="project.id" :project="project" class="col-md-4" />
+      </div>
     </div>
-</template>
+  </template>
   
   <script>
+  import ProjectCard from './ProjectCard.vue';
+  
   export default {
+    components: {
+      ProjectCard,
+    },
     data() {
       return {
-        projects: [],
+        projects: { projects: [] },
       };
     },
     mounted() {
@@ -27,7 +28,7 @@
           .then(response => response.json())
           .then(data => {
             this.projects = data;
-            console.log(this.projects);
+            console.log(this.projects.projects);
           })
           .catch(error => console.error('Errore nella richiesta API:', error));
       },
@@ -36,6 +37,6 @@
   </script>
   
   <style scoped>
-
+  /* Stile specifico del componente se necessario */
   </style>
   
