@@ -1,12 +1,19 @@
 <template>
-
-  </template>
+    <router-link to="/about">About Us</router-link>
+    <ProjectList />
+</template>
   
-  <script>
+<script>
+import ProjectList from '../components/ProjectList.vue';
 
-  </script>
+export default {
+    components: {
+        ProjectList,
+    },
+};
+</script>
   
-  <style scoped>
-  /* Stile specifico del componente se necessario */
-  </style>
+<style scoped>
+/* Stile specifico del componente se necessario */
+</style>
   

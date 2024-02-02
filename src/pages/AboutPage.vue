@@ -1,5 +1,6 @@
 <template>
-
+    <p>about</p>
+    <router-link to="/">Home</router-link>
 </template>
 
 <script>
