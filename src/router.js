@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './pages/HomePage.vue';
 import AboutPage from './pages/AboutPage.vue';
 import ProjectListPage from './pages/ProjectListPage.vue';
-import ProjectDetailPage from './pages/ProjectDetailPage.vue';  // Importa la nuova pagina
+import ProjectDetailPage from './pages/ProjectDetailPage.vue';
+import NotFoundPage from './pages/NotFoundPage.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/project/:slug',
       name: 'projectDetail',
       component: ProjectDetailPage
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'notFound',
+      component: NotFoundPage,
     },
   ]
 });

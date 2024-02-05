@@ -4,6 +4,7 @@
         <p>Titolo: {{ project.title }}</p>
         <p>Descrizione: {{ project.description }}</p>
     </div>
+    <router-link to="/">Home</router-link>
 </template>
 
 <script>
